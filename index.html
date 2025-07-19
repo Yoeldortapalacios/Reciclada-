@@ -1420,6 +1420,44 @@
         .tab-content.active {
             display: block;
         }
+        
+        /* Provider Info */
+        .provider-info {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .provider-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .provider-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .provider-rating .stars {
+            color: var(--warning);
+            margin-right: 5px;
+        }
+        
+        /* Become Provider Section */
+        .become-provider {
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        .become-provider p {
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -1446,23 +1484,12 @@
                                 <li><a href="#" data-category="hygiene">Aseo</a></li>
                                 <li><a href="#" data-category="food">Comida</a></li>
                                 <li><a href="#" data-category="clothing">Ropa Reciclada</a></li>
+                                <li><a href="#" data-category="new-clothing">Ropa Nueva</a></li>
                                 <li><a href="#" data-category="bales">Pacas de Ropa</a></li>
                                 <li><a href="#" data-category="others">Otros</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#publish">Publicar <i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                <li><a href="#" data-publish-category="electronics">Electrodomésticos</a></li>
-                                <li><a href="#" data-publish-category="perfumery">Perfumería</a></li>
-                                <li><a href="#" data-publish-category="lingerie">Lencería</a></li>
-                                <li><a href="#" data-publish-category="hygiene">Aseo</a></li>
-                                <li><a href="#" data-publish-category="food">Comida</a></li>
-                                <li><a href="#" data-publish-category="clothing">Ropa Reciclada</a></li>
-                                <li><a href="#" data-publish-category="bales">Pacas de Ropa</a></li>
-                                <li><a href="#" data-publish-category="others">Otros</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#publish">Publicar</a></li>
                         <li><a href="#about">Sobre Nosotros</a></li>
                         <li><a href="#faq">Preguntas</a></li>
                         <li><a href="#contact">Contacto</a></li>
@@ -1496,9 +1523,9 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Bienvenidos a Tienda Virtual Cuba</h1>
-            <p>La primera plataforma de gestoría de ventas en Cuba. Conectamos proveedores con compradores de todo el país, ofreciendo seguridad, confianza y la mejor experiencia de compra.</p>
+            <p>La plataforma de gestoría de ventas en Cuba. Conectamos proveedores confiables con compradores de todo el país, ofreciendo seguridad, confianza y la mejor experiencia de compra.</p>
             <a href="#products" class="btn">Explorar Productos</a>
-            <a href="#publish" class="btn btn-secondary">Publicar Producto</a>
+            <a href="#contact" class="btn btn-secondary">Contactar al Gestor</a>
         </div>
     </section>
 
@@ -1508,10 +1535,24 @@
             <h2 class="section-title">Sobre Nosotros</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Jóvenes emprendiendo en el comercio electrónico cubano</h3>
-                    <p>Somos un grupo de jóvenes emprendedores cubanos que hemos creado esta plataforma para facilitar el comercio electrónico en nuestro país. Nuestro objetivo es conectar a los gestores de diversos productos con los compradores interesados, ofreciendo un servicio seguro y confiable.</p>
-                    <p>No tenemos la mercancía físicamente, nos encargamos de darle promoción a la mercancía de muchos gestores de diversos tipos de productos, facilitando el proceso de compra-venta y garantizando transparencia en todas las transacciones.</p>
-                    <p>Nuestra comisión es solo del 10% sobre las ventas realizadas a través de nuestra plataforma, ofreciendo las primeras 3 publicaciones completamente gratuitas para nuevos proveedores.</p>
+                    <h3>Servicio de gestoría de ventas en Cuba</h3>
+                    <p>Somos una plataforma dedicada a facilitar el comercio electrónico en Cuba. Nos encargamos de dar promoción a la mercancía de proveedores verificados, facilitando el proceso de compra-venta y garantizando transparencia en todas las transacciones.</p>
+                    <p>Todos los productos son publicados directamente por el gestor después de una verificación cuidadosa. Si estás interesado en que tus productos aparezcan en nuestra tienda, puedes contactarme directamente para evaluar tu catálogo.</p>
+                    <div class="provider-info">
+                        <h3>Información del Gestor</h3>
+                        <div class="provider-rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span>4.7 (128 valoraciones)</span>
+                        </div>
+                        <p><i class="fas fa-phone"></i> +53 55703261</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/5355703261" target="_blank">Enviar mensaje</a></p>
+                    </div>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Equipo de trabajo">
@@ -1579,6 +1620,15 @@
                         <p>Prendas segunda mano</p>
                     </div>
                 </div>
+                <div class="category-card" data-category="new-clothing">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ropa Nueva">
+                    </div>
+                    <div class="category-info">
+                        <h3>Ropa Nueva</h3>
+                        <p>Prendas nuevas con etiqueta</p>
+                    </div>
+                </div>
                 <div class="category-card" data-category="bales">
                     <div class="category-img">
                         <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pacas de Ropa">
@@ -1610,15 +1660,15 @@
                     <div class="step-icon">
                         <i class="fas fa-user-plus"></i>
                     </div>
-                    <h3>Registro</h3>
-                    <p>Los proveedores se registran en nuestra plataforma y pueden publicar sus productos con las primeras 3 publicaciones gratuitas.</p>
+                    <h3>Contacto</h3>
+                    <p>Si eres proveedor, contáctame directamente para evaluar tu catálogo y acordar los términos de publicación.</p>
                 </div>
                 <div class="step">
                     <div class="step-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <h3>Aprobación</h3>
-                    <p>Revisamos cada publicación para garantizar la calidad y veracidad de la información antes de hacerla pública.</p>
+                    <p>Reviso cada producto para garantizar la calidad y veracidad de la información antes de publicarlo.</p>
                 </div>
                 <div class="step">
                     <div class="step-icon">
@@ -1631,9 +1681,17 @@
                     <div class="step-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Venta</h3>
-                    <p>Conectamos al comprador con el proveedor y cobramos solo el 10% de comisión por venta realizada.</p>
+                    <h3>Compra</h3>
+                    <p>Conecto al comprador con el proveedor y coordino el proceso de compra-venta de forma segura.</p>
                 </div>
+            </div>
+            
+            <div class="become-provider">
+                <h3>¿Quieres vender tus productos aquí?</h3>
+                <p>Si tienes productos de calidad que deseas promocionar, contáctame directamente para evaluar tu catálogo y establecer los términos de colaboración.</p>
+                <a href="https://wa.me/5355703261" target="_blank" class="btn">
+                    <i class="fab fa-whatsapp"></i> Contactar al Gestor
+                </a>
             </div>
         </div>
     </section>
@@ -1657,6 +1715,7 @@
                     <button class="filter-btn" data-filter="hygiene">Aseo</button>
                     <button class="filter-btn" data-filter="food">Comida</button>
                     <button class="filter-btn" data-filter="clothing">Ropa Reciclada</button>
+                    <button class="filter-btn" data-filter="new-clothing">Ropa Nueva</button>
                     <button class="filter-btn" data-filter="bales">Pacas</button>
                 </div>
             </div>
@@ -1725,258 +1784,51 @@
         </div>
     </section>
 
+    <section class="category-section" id="new-clothing-section">
+        <div class="container">
+            <div class="category-header">
+                <h2 class="section-title">Ropa Nueva</h2>
+                <div class="category-filter">
+                    <select id="new-clothing-sort">
+                        <option value="newest">Más nuevos</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="rating">Mejor valorados</option>
+                    </select>
+                    <select id="new-clothing-type">
+                        <option value="all">Todos</option>
+                        <option value="footwear">Calzado</option>
+                        <option value="tops">Prendas superiores</option>
+                        <option value="bottoms">Prendas inferiores</option>
+                        <option value="underwear">Ropa interior</option>
+                        <option value="accessories">Accesorios</option>
+                        <option value="other">Otros</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="newClothingContainer">
+                <!-- Productos de ropa nueva se cargarán aquí -->
+            </div>
+        </div>
+    </section>
+
     <!-- Publish Section -->
     <section class="publish" id="publish">
         <div class="container">
-            <div class="tabs" id="publishTabs">
-                <div class="tab active" data-tab="general">General</div>
-                <div class="tab" data-tab="electronics">Electrodomésticos</div>
-                <div class="tab" data-tab="perfumery">Perfumería</div>
-                <div class="tab" data-tab="lingerie">Lencería</div>
-                <div class="tab" data-tab="hygiene">Aseo</div>
-                <div class="tab" data-tab="food">Comida</div>
-                <div class="tab" data-tab="clothing">Ropa Reciclada</div>
-                <div class="tab" data-tab="bales">Pacas de Ropa</div>
-            </div>
-            
-            <div class="tab-content active" id="general-tab">
-                <h2 class="section-title">Publica tu Producto</h2>
-                <p>Selecciona la categoría de tu producto para ver los campos específicos requeridos.</p>
-            </div>
-            
-            <div class="tab-content" id="electronics-tab">
-                <h2 class="section-title">Publicar Electrodoméstico</h2>
-                <div class="publish-form">
-                    <form id="electronicsForm">
-                        <div class="form-group">
-                            <label for="electronics-name">Nombre del Producto</label>
-                            <input type="text" id="electronics-name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-type">Tipo de Electrodoméstico</label>
-                            <select id="electronics-publish-type" required>
-                                <option value="">Selecciona un tipo</option>
-                                <option value="fridge">Nevera</option>
-                                <option value="stove">Cocina</option>
-                                <option value="washer">Lavadora</option>
-                                <option value="ac">Aire Acondicionado</option>
-                                <option value="other">Otro</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Estado del Producto</label>
-                            <div class="status-selector">
-                                <div class="status-option" data-status="new">Nuevo</div>
-                                <div class="status-option" data-status="sold">Agotado</div>
-                                <div class="status-option" data-status="negotiation">En Negociación</div>
-                                <div class="status-option" data-status="offer">En Oferta</div>
-                            </div>
-                            <input type="hidden" id="electronics-status" value="new">
-                        </div>
-                        
-                        <div class="form-group" id="electronics-offer-price-group" style="display: none;">
-                            <label for="electronics-offer-price">Precio de Oferta</label>
-                            <input type="number" id="electronics-offer-price" step="0.01">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-brand">Marca</label>
-                            <input type="text" id="electronics-brand" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-model">Modelo</label>
-                            <input type="text" id="electronics-model" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-description">Descripción</label>
-                            <textarea id="electronics-description" required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-price">Precio</label>
-                            <input type="number" id="electronics-price" step="0.01" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Moneda de Pago</label>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                <label><input type="radio" name="electronics-currency" value="CUP" checked> CUP</label>
-                                <label><input type="radio" name="electronics-currency" value="USD"> USD</label>
-                                <label><input type="radio" name="electronics-currency" value="Transfer"> Transferencia</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="electronics-exchange-rate-group" style="display: none;">
-                            <label for="electronics-exchange-rate">Tasa de Cambio (CUP por 1 USD)</label>
-                            <input type="number" id="electronics-exchange-rate">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Método de Entrega</label>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                <label><input type="checkbox" name="electronics-delivery" value="domicilio"> Incluye Domicilio</label>
-                                <label><input type="checkbox" name="electronics-delivery" value="extra"> Domicilio por Coste Extra</label>
-                                <label><input type="checkbox" name="electronics-delivery" value="tienda"> Tienda Física</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-provider-name">Nombre del Proveedor</label>
-                            <input type="text" id="electronics-provider-name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-provider-phone">Teléfono del Proveedor</label>
-                            <input type="tel" id="electronics-provider-phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="electronics-provider-address">Dirección del Proveedor</label>
-                            <input type="text" id="electronics-provider-address" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Imágenes del Producto (Máximo 3)</label>
-                            <div class="image-upload" id="electronics-image-upload">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>Arrastra y suelta imágenes aquí o haz clic para seleccionar</p>
-                                <input type="file" id="electronics-file-input" accept="image/*" multiple style="display: none;">
-                            </div>
-                            <div class="image-preview" id="electronics-image-preview"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label><input type="checkbox" required> Acepto que Tienda Virtual Cuba cobrará el 10% de comisión por cada venta realizada a través de esta plataforma.</label>
-                        </div>
-                        
-                        <button type="submit" class="btn">Enviar para Aprobación</button>
-                    </form>
+            <h2 class="section-title">Publicar Producto</h2>
+            <div class="provider-info">
+                <h3>¿Eres proveedor y quieres publicar tus productos?</h3>
+                <p>Para publicar productos en nuestra tienda, debes contactarme directamente para evaluar tu catálogo y establecer los términos de colaboración. Solo publico productos de proveedores verificados.</p>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="https://wa.me/5355703261" target="_blank" class="btn">
+                        <i class="fab fa-whatsapp"></i> Contactar al Gestor
+                    </a>
+                    <p style="margin-top: 1rem;">También puedes contactarme por Telegram para mejor servicio:</p>
+                    <a href="https://t.me/c/2534167295/1" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-telegram"></i> Unirse a Telegram
+                    </a>
                 </div>
             </div>
-            
-            <div class="tab-content" id="perfumery-tab">
-                <h2 class="section-title">Publicar Producto de Perfumería</h2>
-                <div class="publish-form">
-                    <form id="perfumeryForm">
-                        <div class="form-group">
-                            <label for="perfumery-name">Nombre del Producto</label>
-                            <input type="text" id="perfumery-name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-type">Tipo de Producto</label>
-                            <select id="perfumery-publish-type" required>
-                                <option value="">Selecciona un tipo</option>
-                                <option value="perfume">Perfume</option>
-                                <option value="cologne">Colonia</option>
-                                <option value="lotion">Loción</option>
-                                <option value="other">Otro</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Estado del Producto</label>
-                            <div class="status-selector">
-                                <div class="status-option" data-status="new">Nuevo</div>
-                                <div class="status-option" data-status="sold">Agotado</div>
-                                <div class="status-option" data-status="negotiation">En Negociación</div>
-                                <div class="status-option" data-status="offer">En Oferta</div>
-                            </div>
-                            <input type="hidden" id="perfumery-status" value="new">
-                        </div>
-                        
-                        <div class="form-group" id="perfumery-offer-price-group" style="display: none;">
-                            <label for="perfumery-offer-price">Precio de Oferta</label>
-                            <input type="number" id="perfumery-offer-price" step="0.01">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-brand">Marca</label>
-                            <input type="text" id="perfumery-brand" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-size">Tamaño</label>
-                            <input type="text" id="perfumery-size" placeholder="Ej: 100ml" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-origin">Origen</label>
-                            <input type="text" id="perfumery-origin" placeholder="País de origen">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-description">Descripción</label>
-                            <textarea id="perfumery-description" required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-price">Precio</label>
-                            <input type="number" id="perfumery-price" step="0.01" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Moneda de Pago</label>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                <label><input type="radio" name="perfumery-currency" value="CUP" checked> CUP</label>
-                                <label><input type="radio" name="perfumery-currency" value="USD"> USD</label>
-                                <label><input type="radio" name="perfumery-currency" value="Transfer"> Transferencia</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="perfumery-exchange-rate-group" style="display: none;">
-                            <label for="perfumery-exchange-rate">Tasa de Cambio (CUP por 1 USD)</label>
-                            <input type="number" id="perfumery-exchange-rate">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Método de Entrega</label>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                <label><input type="checkbox" name="perfumery-delivery" value="domicilio"> Incluye Domicilio</label>
-                                <label><input type="checkbox" name="perfumery-delivery" value="extra"> Domicilio por Coste Extra</label>
-                                <label><input type="checkbox" name="perfumery-delivery" value="tienda"> Tienda Física</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-provider-name">Nombre del Proveedor</label>
-                            <input type="text" id="perfumery-provider-name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-provider-phone">Teléfono del Proveedor</label>
-                            <input type="tel" id="perfumery-provider-phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="perfumery-provider-address">Dirección del Proveedor</label>
-                            <input type="text" id="perfumery-provider-address" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Imágenes del Producto (Máximo 3)</label>
-                            <div class="image-upload" id="perfumery-image-upload">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>Arrastra y suelta imágenes aquí o haz clic para seleccionar</p>
-                                <input type="file" id="perfumery-file-input" accept="image/*" multiple style="display: none;">
-                            </div>
-                            <div class="image-preview" id="perfumery-image-preview"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label><input type="checkbox" required> Acepto que Tienda Virtual Cuba cobrará el 10% de comisión por cada venta realizada a través de esta plataforma.</label>
-                        </div>
-                        
-                        <button type="submit" class="btn">Enviar para Aprobación</button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Más formularios de publicación por categoría aquí... -->
         </div>
     </section>
 
@@ -1991,7 +1843,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Tienda Virtual Cuba es una plataforma de gestoría de ventas que conecta a proveedores con compradores. Los proveedores publican sus productos, nosotros los revisamos y aprobamos, y los compradores pueden encontrarlos y contactar al proveedor. Cobramos un 10% de comisión por cada venta realizada a través de nuestra plataforma.</p>
+                    <p>Tienda Virtual Cuba es una plataforma de gestoría de ventas donde publico productos de proveedores verificados. Los compradores pueden explorar el catálogo y contactarme directamente para coordinar la compra.</p>
                 </div>
             </div>
             
@@ -2001,7 +1853,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Puedes publicar tus productos completando el formulario en la sección "Publicar". Las primeras 3 publicaciones son gratuitas para nuevos proveedores. Cada publicación será revisada por nuestro equipo antes de ser aprobada y publicada en el sitio.</p>
+                    <p>Si tienes productos de calidad que deseas promocionar, contáctame directamente por WhatsApp o Telegram para evaluar tu catálogo. Solo trabajo con proveedores verificados que ofrecen productos de calidad.</p>
                 </div>
             </div>
             
@@ -2011,7 +1863,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Cobramos un 10% de comisión sobre el valor de cada venta realizada a través de nuestra plataforma. Esta comisión cubre los costos de mantenimiento de la plataforma, promoción de los productos y el servicio de intermediación segura que ofrecemos.</p>
+                    <p>La comisión varía según el tipo de producto y volumen de ventas. Se acuerda directamente con cada proveedor al momento de establecer la colaboración.</p>
                 </div>
             </div>
             
@@ -2021,7 +1873,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Verificamos la identidad de todos los proveedores antes de aprobar sus publicaciones. Además, mantenemos un sistema de valoraciones y comentarios que permite a los compradores evaluar su experiencia con cada proveedor. Recomendamos siempre realizar transacciones en persona y verificar los productos antes de pagar.</p>
+                    <p>Todos los proveedores son verificados personalmente por mí. Además, coordino personalmente cada transacción para garantizar la satisfacción tanto del comprador como del proveedor.</p>
                 </div>
             </div>
             
@@ -2031,7 +1883,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Sí, nuestra plataforma está disponible para compradores de toda Cuba. Sin embargo, la disponibilidad de envío depende de cada proveedor. Algunos ofrecen envíos a domicilio (con o sin costo adicional), mientras que otros requieren recogida en su tienda física. Esta información está claramente indicada en cada publicación.</p>
+                    <p>Sí, nuestra plataforma está disponible para compradores de toda Cuba. La disponibilidad de envío depende de cada producto y proveedor. Esta información está claramente indicada en cada publicación.</p>
                 </div>
             </div>
             
@@ -2041,7 +1893,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>En caso de problemas con un producto, primero contacta directamente al proveedor para intentar resolver la situación. Si no logras una solución satisfactoria, puedes reportar el problema a nuestro equipo a través del botón de WhatsApp y nosotros mediremos en la disputa.</p>
+                    <p>En caso de problemas con un producto, contáctame directamente a través de WhatsApp o Telegram y mediaré en la situación para encontrar una solución satisfactoria.</p>
                 </div>
             </div>
         </div>
@@ -2052,7 +1904,7 @@
         <div class="container">
             <h2 class="section-title">Contacto</h2>
             <div class="contact-info">
-                <p>¿Tienes preguntas o necesitas ayuda? Contáctanos a través de nuestros canales:</p>
+                <p>¿Tienes preguntas o necesitas ayuda? Contáctame a través de mis canales:</p>
             </div>
             <div class="contact-buttons">
                 <a href="https://wa.me/5355703261" target="_blank" class="contact-btn">
@@ -2061,11 +1913,21 @@
                 <a href="tel:+5355703261" class="contact-btn">
                     <i class="fas fa-phone"></i> Llamar
                 </a>
+                <a href="https://t.me/c/2534167295/1" target="_blank" class="contact-btn">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
                 <a href="https://www.instagram.com/tienditavirtual.cu?igsh=MXdqZ3JsZW80eHgxOA==" target="_blank" class="contact-btn">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
-                <a href="mailto:contacto@tiendavirtualcuba.com" class="contact-btn">
-                    <i class="fas fa-envelope"></i> Email
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <p>Para mejor servicio y comunidad más activa, únete a nuestro grupo de Telegram:</p>
+                <a href="https://t.me/c/2534167295/1" target="_blank" class="btn" style="margin-top: 1rem;">
+                    <i class="fab fa-telegram"></i> Comunidad en Telegram
+                </a>
+                <p style="margin-top: 1rem;">O al grupo de WhatsApp para clientes frecuentes:</p>
+                <a href="https://chat.whatsapp.com/KHCh8jCNJ5ULIKpMm4FbFb" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i> Comunidad en WhatsApp
                 </a>
             </div>
         </div>
@@ -2077,11 +1939,11 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Tienda Virtual Cuba</h3>
-                    <p>La primera plataforma de gestoría de ventas en Cuba, conectando proveedores con compradores de todo el país.</p>
+                    <p>Plataforma de gestoría de ventas en Cuba, conectando proveedores verificados con compradores de todo el país.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/tienditavirtual.cu?igsh=MXdqZ3JsZW80eHgxOA==" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/5355703261" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://t.me/c/2534167295/1" target="_blank"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -2103,6 +1965,7 @@
                         <li><a href="#" data-category="hygiene">Productos de Aseo</a></li>
                         <li><a href="#" data-category="food">Comida</a></li>
                         <li><a href="#" data-category="clothing">Ropa Reciclada</a></li>
+                        <li><a href="#" data-category="new-clothing">Ropa Nueva</a></li>
                         <li><a href="#" data-category="bales">Pacas de Ropa</a></li>
                     </ul>
                 </div>
@@ -2111,6 +1974,7 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> +53 55703261</li>
                         <li><i class="fab fa-whatsapp"></i> WhatsApp</li>
+                        <li><i class="fab fa-telegram"></i> Telegram</li>
                         <li><i class="fab fa-instagram"></i> @tienditavirtual.cu</li>
                     </ul>
                 </div>
@@ -2136,13 +2000,19 @@
         <div class="modal-content">
             <span class="close-modal" id="closeWhatsappModal">&times;</span>
             <h3>Contactar al Gestor</h3>
-            <p>¿Tienes dudas sobre cómo publicar tus productos o necesitas ayuda con algo específico? Escríbenos directamente a WhatsApp:</p>
+            <p>¿Tienes dudas sobre algún producto o necesitas ayuda con tu compra? Escríbeme directamente a WhatsApp:</p>
             <div style="margin: 1.5rem 0; text-align: center;">
                 <a href="https://wa.me/5355703261" target="_blank" class="btn" style="display: inline-flex; align-items: center;">
                     <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Chatear por WhatsApp
                 </a>
             </div>
-            <p>Horario de atención: Lunes a Viernes de 9:00 am a 5:00 pm</p>
+            <p>También puedes unirte a nuestra comunidad en Telegram para mejor servicio:</p>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="https://t.me/c/2534167295/1" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-telegram"></i> Unirse a Telegram
+                </a>
+            </div>
+            <p style="margin-top: 1rem;">Horario de atención: Lunes a Domingo de 9:00 am a 9:00 pm</p>
         </div>
     </div>
 
@@ -2195,60 +2065,10 @@
                     <div class="product-modal-actions">
                         <button class="btn" id="addToCartBtn"><i class="fas fa-cart-plus"></i> Añadir al Carrito</button>
                         <a href="https://wa.me/5355703261" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://t.me/c/2534167295/1" target="_blank" class="btn btn-secondary" style="background-color: #0088cc;"><i class="fab fa-telegram"></i> Telegram</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Edit Product Modal -->
-    <div class="modal edit-product-modal" id="editProductModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeEditProductModal">&times;</span>
-            <h2>Editar Producto</h2>
-            <form id="editProductForm">
-                <div class="form-group">
-                    <label>Estado del Producto</label>
-                    <div class="status-selector" id="edit-status-selector">
-                        <div class="status-option" data-status="new">Nuevo</div>
-                        <div class="status-option" data-status="sold">Agotado</div>
-                        <div class="status-option" data-status="negotiation">En Negociación</div>
-                        <div class="status-option" data-status="offer">En Oferta</div>
-                    </div>
-                    <input type="hidden" id="edit-status" value="new">
-                </div>
-                
-                <div class="form-group" id="edit-offer-price-group" style="display: none;">
-                    <label for="edit-offer-price">Precio de Oferta</label>
-                    <input type="number" id="edit-offer-price" step="0.01">
-                </div>
-                
-                <div class="form-group">
-                    <label for="edit-price">Precio</label>
-                    <input type="number" id="edit-price" step="0.01" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="edit-description">Descripción</label>
-                    <textarea id="edit-description" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Método de Entrega</label>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <label><input type="checkbox" name="edit-delivery" value="domicilio"> Incluye Domicilio</label>
-                        <label><input type="checkbox" name="edit-delivery" value="extra"> Domicilio por Coste Extra</label>
-                        <label><input type="checkbox" name="edit-delivery" value="tienda"> Tienda Física</label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Imágenes del Producto</label>
-                    <div class="image-preview" id="edit-image-preview"></div>
-                </div>
-                
-                <button type="submit" class="btn">Guardar Cambios</button>
-            </form>
         </div>
     </div>
 
@@ -2270,77 +2090,11 @@
                 
                 <div class="cart-buttons">
                     <button class="btn" id="continueShoppingBtn">Seguir Comprando</button>
-                    <button class="btn btn-secondary" id="checkoutBtn">Finalizar Compra</button>
+                    <a href="https://wa.me/5355703261?text=Hola,%20estoy%20interesado%20en%20los%20siguientes%20productos%20de%20tu%20tienda:%0A%0A[LISTA_DE_PRODUCTOS]%0A%0APor%20favor%20proporcioname%20más%20información%20y%20coordinemos%20la%20compra." target="_blank" class="btn btn-secondary" id="checkoutBtn">
+                        <i class="fab fa-whatsapp"></i> Finalizar Compra
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Login/Signup Modal -->
-    <div class="modal auth-modal" id="authModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeAuthModal">&times;</span>
-            <div class="auth-tabs">
-                <div class="auth-tab active" data-auth-tab="login">Iniciar Sesión</div>
-                <div class="auth-tab" data-auth-tab="signup">Registrarse</div>
-            </div>
-            
-            <form class="auth-form active" id="loginForm">
-                <div class="form-group">
-                    <label for="login-email">Correo Electrónico</label>
-                    <input type="email" id="login-email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="login-password">Contraseña</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                
-                <button type="submit" class="btn" id="loginBtn">
-                    <span id="loginBtnText">Iniciar Sesión</span>
-                    <div class="spinner" id="loginSpinner" style="display: none;"></div>
-                </button>
-                
-                <div style="text-align: center; margin-top: 1rem;">
-                    <a href="#" id="forgotPassword">¿Olvidaste tu contraseña?</a>
-                </div>
-            </form>
-            
-            <form class="auth-form" id="signupForm">
-                <div class="form-group">
-                    <label for="signup-name">Nombre Completo</label>
-                    <input type="text" id="signup-name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-email">Correo Electrónico</label>
-                    <input type="email" id="signup-email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-phone">Teléfono</label>
-                    <input type="tel" id="signup-phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-password">Contraseña</label>
-                    <input type="password" id="signup-password" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-confirm-password">Confirmar Contraseña</label>
-                    <input type="password" id="signup-confirm-password" required>
-                </div>
-                
-                <div class="form-group">
-                    <label><input type="checkbox" required> Acepto los términos y condiciones</label>
-                </div>
-                
-                <button type="submit" class="btn" id="signupBtn">
-                    <span id="signupBtnText">Registrarse</span>
-                    <div class="spinner" id="signupSpinner" style="display: none;"></div>
-                </button>
-            </form>
         </div>
     </div>
 
@@ -2583,20 +2337,72 @@
                 ],
                 dateAdded: "2023-06-08",
                 providerId: "provider4"
+            },
+            {
+                id: 9,
+                title: "Camisa Polo Ralph Lauren",
+                category: "new-clothing",
+                subcategory: "tops",
+                description: "Camisa Polo Ralph Lauren original, talla M, color azul, nueva con etiqueta.",
+                price: 60,
+                currency: "USD",
+                exchangeRate: 120,
+                vendor: "Moda Elegante",
+                phone: "+53555901234",
+                location: "La Habana",
+                rating: 4.7,
+                stock: "Disponible",
+                delivery: "Domicilio por costo extra",
+                status: "new",
+                offerPrice: null,
+                images: [
+                    "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                ],
+                specs: [
+                    { name: "Marca", value: "Ralph Lauren" },
+                    { name: "Modelo", value: "Polo" },
+                    { name: "Talla", value: "M" },
+                    { name: "Color", value: "Azul" },
+                    { name: "Estado", value: "Nuevo con etiqueta" }
+                ],
+                dateAdded: "2023-06-22",
+                providerId: "provider5"
+            },
+            {
+                id: 10,
+                title: "Zapatos Adidas Superstar",
+                category: "new-clothing",
+                subcategory: "footwear",
+                description: "Zapatos Adidas Superstar originales, talla 42, color blanco, nuevos en caja.",
+                price: 90,
+                currency: "USD",
+                exchangeRate: 120,
+                vendor: "Calzados Premium",
+                phone: "+53555012345",
+                location: "Varadero",
+                rating: 4.8,
+                stock: "Disponible",
+                delivery: "Incluye domicilio",
+                status: "new",
+                offerPrice: null,
+                images: [
+                    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                ],
+                specs: [
+                    { name: "Marca", value: "Adidas" },
+                    { name: "Modelo", value: "Superstar" },
+                    { name: "Talla", value: "42" },
+                    { name: "Color", value: "Blanco" },
+                    { name: "Estado", value: "Nuevo en caja" }
+                ],
+                dateAdded: "2023-06-25",
+                providerId: "provider6"
             }
         ];
 
         // Carrito de compras
         let cart = [];
         
-        // Proveedor actual (simulado)
-        const currentProvider = {
-            id: "provider1",
-            name: "ElectroCuba",
-            phone: "+53555123456",
-            email: "proveedor@ejemplo.com"
-        };
-
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
@@ -2644,14 +2450,6 @@
             productModal.classList.remove('active');
         });
         
-        // Edit Product Modal
-        const editProductModal = document.getElementById('editProductModal');
-        const closeEditProductModal = document.getElementById('closeEditProductModal');
-        
-        closeEditProductModal.addEventListener('click', () => {
-            editProductModal.classList.remove('active');
-        });
-        
         // Cart Modal
         const cartBtn = document.getElementById('cartBtn');
         const cartModal = document.getElementById('cartModal');
@@ -2672,373 +2470,29 @@
             cartModal.classList.remove('active');
         });
         
-        checkoutBtn.addEventListener('click', () => {
-            alert('Compra finalizada. Nos pondremos en contacto contigo para coordinar el pago y entrega.');
-            cart = [];
-            updateCartCount();
-            cartModal.classList.remove('active');
-        });
-        
-        // Auth Modal
-        const accountBtn = document.getElementById('accountBtn');
-        const authModal = document.getElementById('authModal');
-        const closeAuthModal = document.getElementById('closeAuthModal');
-        const authTabs = document.querySelectorAll('.auth-tab');
-        
-        accountBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            authModal.classList.add('active');
-        });
-        
-        closeAuthModal.addEventListener('click', () => {
-            authModal.classList.remove('active');
-        });
-        
-        authTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                authTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                document.querySelectorAll('.auth-form').forEach(form => {
-                    form.classList.remove('active');
-                });
-                
-                document.getElementById(`${tab.dataset.authTab}Form`).classList.add('active');
-            });
-        });
-        
-        // Close modals when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === whatsappModal) {
-                whatsappModal.classList.remove('active');
-            }
-            if (e.target === productModal) {
-                productModal.classList.remove('active');
-            }
-            if (e.target === editProductModal) {
-                editProductModal.classList.remove('active');
-            }
-            if (e.target === cartModal) {
-                cartModal.classList.remove('active');
-            }
-            if (e.target === authModal) {
-                authModal.classList.remove('active');
-            }
-        });
-
-        // Publish Tabs
-        const publishTabs = document.querySelectorAll('.tab');
-        publishTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                publishTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                
-                document.getElementById(`${tab.dataset.tab}-tab`).classList.add('active');
-            });
-        });
-
-        // Currency radio buttons
-        document.querySelectorAll('input[name="electronics-currency"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const exchangeRateGroup = document.getElementById('electronics-exchange-rate-group');
-                if (this.value === 'USD') {
-                    exchangeRateGroup.style.display = 'block';
-                } else {
-                    exchangeRateGroup.style.display = 'none';
-                }
-            });
-        });
-
-        document.querySelectorAll('input[name="perfumery-currency"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const exchangeRateGroup = document.getElementById('perfumery-exchange-rate-group');
-                if (this.value === 'USD') {
-                    exchangeRateGroup.style.display = 'block';
-                } else {
-                    exchangeRateGroup.style.display = 'none';
-                }
-            });
-        });
-
-        // Status selector
-        function setupStatusSelector(selectorId, hiddenInputId, offerPriceGroupId) {
-            const selector = document.querySelectorAll(`#${selectorId} .status-option`);
-            const hiddenInput = document.getElementById(hiddenInputId);
-            const offerPriceGroup = document.getElementById(offerPriceGroupId);
+        // Actualizar el enlace de WhatsApp al abrir el carrito
+        function updateWhatsAppLink() {
+            let message = "Hola, estoy interesado en los siguientes productos de tu tienda:\n\n";
             
-            selector.forEach(option => {
-                option.addEventListener('click', () => {
-                    // Remove active class from all options
-                    selector.forEach(opt => opt.classList.remove('active'));
-                    
-                    // Add active class to clicked option
-                    option.classList.add('active');
-                    
-                    // Update hidden input value
-                    hiddenInput.value = option.dataset.status;
-                    
-                    // Show/hide offer price field
-                    if (option.dataset.status === 'offer') {
-                        offerPriceGroup.style.display = 'block';
-                    } else {
-                        offerPriceGroup.style.display = 'none';
-                    }
-                    
-                    // Add specific class based on status
-                    option.classList.add(`status-${option.dataset.status}`);
-                });
+            cart.forEach(item => {
+                const price = item.product.offerPrice && item.product.status === 'offer' ? item.product.offerPrice : item.product.price;
+                message += `- ${item.product.title} (${item.quantity} x $${price} ${item.product.currency}) = $${price * item.quantity} ${item.product.currency}\n`;
             });
             
-            // Activate first option by default
-            if (selector.length > 0) {
-                selector[0].click();
-            }
+            message += `\nTotal: $${calculateCartTotal()}\n\nPor favor proporcioname más información y coordinemos la compra.`;
+            
+            checkoutBtn.href = `https://wa.me/5355703261?text=${encodeURIComponent(message)}`;
         }
         
-        setupStatusSelector('electronicsForm .status-selector', 'electronics-status', 'electronics-offer-price-group');
-        setupStatusSelector('perfumeryForm .status-selector', 'perfumery-status', 'perfumery-offer-price-group');
-        setupStatusSelector('edit-status-selector', 'edit-status', 'edit-offer-price-group');
-
-        // Image upload functionality
-        function setupImageUpload(uploadElementId, fileInputId, previewElementId) {
-            const uploadElement = document.getElementById(uploadElementId);
-            const fileInput = document.getElementById(fileInputId);
-            const previewElement = document.getElementById(previewElementId);
-            
-            uploadElement.addEventListener('click', () => {
-                fileInput.click();
+        function calculateCartTotal() {
+            let total = 0;
+            cart.forEach(item => {
+                const price = item.product.offerPrice && item.product.status === 'offer' ? item.product.offerPrice : item.product.price;
+                total += price * item.quantity;
             });
-            
-            uploadElement.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadElement.style.borderColor = '#405DE6';
-            });
-            
-            uploadElement.addEventListener('dragleave', () => {
-                uploadElement.style.borderColor = '#ddd';
-            });
-            
-            uploadElement.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadElement.style.borderColor = '#ddd';
-                if (e.dataTransfer.files.length > 0) {
-                    handleFiles(e.dataTransfer.files, previewElement);
-                }
-            });
-            
-            fileInput.addEventListener('change', () => {
-                if (fileInput.files.length > 0) {
-                    handleFiles(fileInput.files, previewElement);
-                }
-            });
-            
-            function handleFiles(files, previewContainer) {
-                // Clear previous previews if we want to limit to 3 images
-                previewContainer.innerHTML = '';
-                
-                // Limit to 3 images
-                const filesToProcess = Array.from(files).slice(0, 3);
-                
-                filesToProcess.forEach(file => {
-                    if (!file.type.startsWith('image/')) return;
-                    
-                    const reader = new FileReader();
-                    
-                    reader.onload = function(e) {
-                        const previewItem = document.createElement('div');
-                        previewItem.className = 'image-preview-item';
-                        
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        
-                        const removeBtn = document.createElement('div');
-                        removeBtn.className = 'remove-image';
-                        removeBtn.innerHTML = '&times;';
-                        removeBtn.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            previewItem.remove();
-                        });
-                        
-                        previewItem.appendChild(img);
-                        previewItem.appendChild(removeBtn);
-                        previewContainer.appendChild(previewItem);
-                    };
-                    
-                    reader.readAsDataURL(file);
-                });
-            }
+            return total.toFixed(2);
         }
-
-        // Setup image uploads for all forms
-        setupImageUpload('electronics-image-upload', 'electronics-file-input', 'electronics-image-preview');
-        setupImageUpload('perfumery-image-upload', 'perfumery-file-input', 'perfumery-image-preview');
-
-        // Form submission
-        document.getElementById('electronicsForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Create new product object
-            const newProduct = {
-                id: productsData.length + 1,
-                title: document.getElementById('electronics-name').value,
-                category: "electronics",
-                subcategory: document.getElementById('electronics-publish-type').value,
-                description: document.getElementById('electronics-description').value,
-                price: parseFloat(document.getElementById('electronics-price').value),
-                currency: document.querySelector('input[name="electronics-currency"]:checked').value,
-                exchangeRate: document.getElementById('electronics-exchange-rate').value || null,
-                vendor: document.getElementById('electronics-provider-name').value,
-                phone: document.getElementById('electronics-provider-phone').value,
-                location: document.getElementById('electronics-provider-address').value,
-                rating: 0,
-                stock: "Disponible",
-                delivery: Array.from(document.querySelectorAll('input[name="electronics-delivery"]:checked')).map(cb => cb.value).join(", "),
-                status: document.getElementById('electronics-status').value,
-                offerPrice: document.getElementById('electronics-offer-price').value ? parseFloat(document.getElementById('electronics-offer-price').value) : null,
-                images: [], // In a real app, you would upload these to a server
-                specs: [
-                    { name: "Marca", value: document.getElementById('electronics-brand').value },
-                    { name: "Modelo", value: document.getElementById('electronics-model').value },
-                    { name: "Tipo", value: document.getElementById('electronics-publish-type').options[document.getElementById('electronics-publish-type').selectedIndex].text }
-                ],
-                dateAdded: new Date().toISOString().split('T')[0],
-                providerId: currentProvider.id
-            };
-            
-            // Add to products array
-            productsData.unshift(newProduct);
-            
-            // Reset form
-            this.reset();
-            document.getElementById('electronics-image-preview').innerHTML = '';
-            
-            // Update products display
-            filterProducts();
-            
-            // Show success message
-            alert('Producto publicado exitosamente. Aparecerá en el catálogo una vez sea aprobado por nuestro equipo.');
-        });
-
-        document.getElementById('perfumeryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Create new product object
-            const newProduct = {
-                id: productsData.length + 1,
-                title: document.getElementById('perfumery-name').value,
-                category: "perfumery",
-                subcategory: document.getElementById('perfumery-publish-type').value,
-                description: document.getElementById('perfumery-description').value,
-                price: parseFloat(document.getElementById('perfumery-price').value),
-                currency: document.querySelector('input[name="perfumery-currency"]:checked').value,
-                exchangeRate: document.getElementById('perfumery-exchange-rate').value || null,
-                vendor: document.getElementById('perfumery-provider-name').value,
-                phone: document.getElementById('perfumery-provider-phone').value,
-                location: document.getElementById('perfumery-provider-address').value,
-                rating: 0,
-                stock: "Disponible",
-                delivery: Array.from(document.querySelectorAll('input[name="perfumery-delivery"]:checked')).map(cb => cb.value).join(", "),
-                status: document.getElementById('perfumery-status').value,
-                offerPrice: document.getElementById('perfumery-offer-price').value ? parseFloat(document.getElementById('perfumery-offer-price').value) : null,
-                images: [], // In a real app, you would upload these to a server
-                specs: [
-                    { name: "Marca", value: document.getElementById('perfumery-brand').value },
-                    { name: "Tamaño", value: document.getElementById('perfumery-size').value },
-                    { name: "Origen", value: document.getElementById('perfumery-origin').value || "No especificado" },
-                    { name: "Tipo", value: document.getElementById('perfumery-publish-type').options[document.getElementById('perfumery-publish-type').selectedIndex].text }
-                ],
-                dateAdded: new Date().toISOString().split('T')[0],
-                providerId: currentProvider.id
-            };
-            
-            // Add to products array
-            productsData.unshift(newProduct);
-            
-            // Reset form
-            this.reset();
-            document.getElementById('perfumery-image-preview').innerHTML = '';
-            
-            // Update products display
-            filterProducts();
-            
-            // Show success message
-            alert('Producto publicado exitosamente. Aparecerá en el catálogo una vez sea aprobado por nuestro equipo.');
-        });
-
-        // Edit product form submission
-        document.getElementById('editProductForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const productId = parseInt(this.dataset.productId);
-            const productIndex = productsData.findIndex(p => p.id === productId);
-            
-            if (productIndex !== -1) {
-                // Update product data
-                productsData[productIndex].price = parseFloat(document.getElementById('edit-price').value);
-                productsData[productIndex].description = document.getElementById('edit-description').value;
-                productsData[productIndex].status = document.getElementById('edit-status').value;
-                productsData[productIndex].offerPrice = document.getElementById('edit-offer-price').value ? parseFloat(document.getElementById('edit-offer-price').value) : null;
-                productsData[productIndex].delivery = Array.from(document.querySelectorAll('input[name="edit-delivery"]:checked')).map(cb => cb.value).join(", ");
-                
-                // Update products display
-                filterProducts();
-                
-                // Close modal
-                editProductModal.classList.remove('active');
-                
-                // Show success message
-                alert('Producto actualizado exitosamente.');
-            }
-        });
-
-        // Login/Signup form submission
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('loginBtn');
-            const spinner = document.getElementById('loginSpinner');
-            const btnText = document.getElementById('loginBtnText');
-            
-            btnText.textContent = '';
-            spinner.style.display = 'block';
-            
-            // Simulate API call
-            setTimeout(() => {
-                spinner.style.display = 'none';
-                btnText.textContent = 'Iniciar Sesión';
-                alert('Inicio de sesión exitoso');
-                authModal.classList.remove('active');
-            }, 1500);
-        });
-
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('signupBtn');
-            const spinner = document.getElementById('signupSpinner');
-            const btnText = document.getElementById('signupBtnText');
-            
-            btnText.textContent = '';
-            spinner.style.display = 'block';
-            
-            // Simulate API call
-            setTimeout(() => {
-                spinner.style.display = 'none';
-                btnText.textContent = 'Registrarse';
-                alert('Registro exitoso. Ahora puedes iniciar sesión.');
-                authTabs.forEach(t => t.classList.remove('active'));
-                document.querySelector('.auth-tab[data-auth-tab="login"]').classList.add('active');
-                
-                document.querySelectorAll('.auth-form').forEach(form => {
-                    form.classList.remove('active');
-                });
-                document.getElementById('loginForm').classList.add('active');
-                
-                this.reset();
-            }, 1500);
-        });
-
+        
         // Product filtering and display
         function displayProducts(products, containerId) {
             const container = document.getElementById(containerId);
@@ -3107,21 +2561,6 @@
                 productCard.addEventListener('click', () => {
                     openProductModal(product);
                 });
-                
-                // Add edit button if current user is the provider
-                if (product.providerId === currentProvider.id) {
-                    const editBtn = document.createElement('button');
-                    editBtn.className = 'btn btn-small';
-                    editBtn.style.marginTop = '10px';
-                    editBtn.style.width = '100%';
-                    editBtn.innerHTML = '<i class="fas fa-edit"></i> Editar';
-                    editBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        openEditProductModal(product);
-                    });
-                    
-                    productCard.querySelector('.product-info').appendChild(editBtn);
-                }
                 
                 container.appendChild(productCard);
             });
@@ -3207,52 +2646,6 @@
             productModal.classList.add('active');
         }
 
-        function openEditProductModal(product) {
-            // Set product ID on form
-            document.getElementById('editProductForm').dataset.productId = product.id;
-            
-            // Set current values
-            document.getElementById('edit-price').value = product.price;
-            document.getElementById('edit-description').value = product.description;
-            
-            // Set status
-            const statusOptions = document.querySelectorAll('#edit-status-selector .status-option');
-            statusOptions.forEach(option => {
-                if (option.dataset.status === product.status) {
-                    option.click();
-                }
-            });
-            
-            // Set offer price if applicable
-            if (product.offerPrice && product.status === 'offer') {
-                document.getElementById('edit-offer-price').value = product.offerPrice;
-            }
-            
-            // Set delivery methods
-            const deliveryMethods = product.delivery.split(", ");
-            document.querySelectorAll('input[name="edit-delivery"]').forEach(checkbox => {
-                checkbox.checked = deliveryMethods.includes(checkbox.value);
-            });
-            
-            // Set images preview
-            const previewContainer = document.getElementById('edit-image-preview');
-            previewContainer.innerHTML = '';
-            
-            product.images.forEach(img => {
-                const previewItem = document.createElement('div');
-                previewItem.className = 'image-preview-item';
-                
-                const imgElement = document.createElement('img');
-                imgElement.src = img;
-                
-                previewItem.appendChild(imgElement);
-                previewContainer.appendChild(previewItem);
-            });
-            
-            // Open modal
-            editProductModal.classList.add('active');
-        }
-
         // Cart functionality
         function addToCart(product) {
             // Check if product is already in cart
@@ -3313,6 +2706,7 @@
             }
             
             let total = 0;
+            let currency = '';
             
             cart.forEach((item, index) => {
                 const cartItemElement = document.createElement('div');
@@ -3322,6 +2716,7 @@
                 const price = item.product.offerPrice && item.product.status === 'offer' ? item.product.offerPrice : item.product.price;
                 const itemTotal = price * item.quantity;
                 total += itemTotal;
+                currency = item.product.currency;
                 
                 // Format price
                 let priceText;
@@ -3357,8 +2752,10 @@
             });
             
             // Format total
-            const currency = cart[0].product.currency; // Assuming all items have same currency
             cartTotalElement.textContent = `$${total.toFixed(2)} ${currency}`;
+            
+            // Update WhatsApp link
+            updateWhatsAppLink();
             
             // Add event listeners for quantity buttons
             document.querySelectorAll('.decrease-quantity').forEach(btn => {
@@ -3453,33 +2850,6 @@
                     // Scroll to the section
                     section.scrollIntoView({ behavior: 'smooth' });
                 }
-            });
-        });
-
-        // Publish category links
-        document.querySelectorAll('[data-publish-category]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const category = this.dataset.publishCategory;
-                
-                // Activate the corresponding tab
-                document.querySelectorAll('.tab').forEach(tab => {
-                    tab.classList.remove('active');
-                    if (tab.dataset.tab === category) {
-                        tab.classList.add('active');
-                    }
-                });
-                
-                // Show the corresponding tab content
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                    if (content.id === `${category}-tab`) {
-                        content.classList.add('active');
-                    }
-                });
-                
-                // Scroll to publish section
-                document.getElementById('publish').scrollIntoView({ behavior: 'smooth' });
             });
         });
 
