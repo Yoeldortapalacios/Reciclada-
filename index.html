@@ -15,6 +15,11 @@
             --success: #4CAF50;
             --warning: #FFC107;
             --danger: #F44336;
+            --info: #2196F3;
+            --new: #FF5722;
+            --negotiation: #9C27B0;
+            --offer: #FF9800;
+            --sold: #607D8B;
         }
         
         * {
@@ -453,6 +458,7 @@
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .product-card:hover {
@@ -476,11 +482,27 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: var(--success);
             color: white;
             padding: 0.2rem 0.5rem;
             border-radius: 50px;
             font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .badge-new {
+            background-color: var(--new);
+        }
+        
+        .badge-sold {
+            background-color: var(--sold);
+        }
+        
+        .badge-negotiation {
+            background-color: var(--negotiation);
+        }
+        
+        .badge-offer {
+            background-color: var(--offer);
         }
         
         .product-info {
@@ -507,6 +529,13 @@
             font-size: 1rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.8rem;
+            margin-right: 5px;
         }
         
         .product-meta {
@@ -797,11 +826,9 @@
             font-size: 0.8rem;
         }
         
-        /* Floating Button */
+        /* Floating Buttons */
         .floating-btn {
             position: fixed;
-            bottom: 80px;
-            right: 20px;
             width: 50px;
             height: 50px;
             background: linear-gradient(45deg, var(--primary), var(--accent));
@@ -819,6 +846,33 @@
         
         .floating-btn:hover {
             transform: scale(1.1);
+        }
+        
+        .floating-btn.whatsapp {
+            bottom: 80px;
+            right: 20px;
+        }
+        
+        .floating-btn.cart {
+            bottom: 140px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--success), #2E7D32);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--danger);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: bold;
         }
         
         /* Modal */
@@ -1006,6 +1060,125 @@
             flex-wrap: wrap;
         }
         
+        /* Edit Product Modal */
+        .edit-product-modal .modal-content {
+            max-width: 800px;
+        }
+        
+        /* Cart Modal */
+        .cart-modal .modal-content {
+            max-width: 800px;
+        }
+        
+        .cart-items {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cart-item-vendor {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cart-item-price {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .cart-item-quantity button {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .cart-item-quantity input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 0.2rem;
+        }
+        
+        .remove-item {
+            color: var(--danger);
+            cursor: pointer;
+        }
+        
+        .cart-summary {
+            margin-top: 1.5rem;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
         /* Login/Signup Modal */
         .auth-modal .modal-content {
             max-width: 400px;
@@ -1038,6 +1211,44 @@
         
         .auth-form.active {
             display: block;
+        }
+        
+        /* Status Selector */
+        .status-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .status-option {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .status-option.active {
+            color: white;
+            border-color: transparent;
+        }
+        
+        .status-new {
+            background-color: var(--new);
+        }
+        
+        .status-sold {
+            background-color: var(--sold);
+        }
+        
+        .status-negotiation {
+            background-color: var(--negotiation);
+        }
+        
+        .status-offer {
+            background-color: var(--offer);
         }
         
         /* Responsive */
@@ -1088,8 +1299,12 @@
                 display: flex;
             }
             
-            .floating-btn {
+            .floating-btn.whatsapp {
                 bottom: 70px;
+            }
+            
+            .floating-btn.cart {
+                bottom: 130px;
             }
             
             .about-content {
@@ -1103,6 +1318,19 @@
             .about-image {
                 order: 1;
                 margin-bottom: 1.5rem;
+            }
+            
+            .product-modal-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+            }
+            
+            .cart-item-img {
+                width: 100%;
+                height: 150px;
             }
         }
         
@@ -1135,6 +1363,14 @@
             .product-modal-thumbnail {
                 width: 40px;
                 height: 40px;
+            }
+            
+            .cart-buttons {
+                flex-direction: column;
+            }
+            
+            .cart-buttons .btn {
+                width: 100%;
             }
         }
         
@@ -1530,6 +1766,22 @@
                         </div>
                         
                         <div class="form-group">
+                            <label>Estado del Producto</label>
+                            <div class="status-selector">
+                                <div class="status-option" data-status="new">Nuevo</div>
+                                <div class="status-option" data-status="sold">Agotado</div>
+                                <div class="status-option" data-status="negotiation">En Negociación</div>
+                                <div class="status-option" data-status="offer">En Oferta</div>
+                            </div>
+                            <input type="hidden" id="electronics-status" value="new">
+                        </div>
+                        
+                        <div class="form-group" id="electronics-offer-price-group" style="display: none;">
+                            <label for="electronics-offer-price">Precio de Oferta</label>
+                            <input type="number" id="electronics-offer-price" step="0.01">
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="electronics-brand">Marca</label>
                             <input type="text" id="electronics-brand" required>
                         </div>
@@ -1624,6 +1876,22 @@
                                 <option value="lotion">Loción</option>
                                 <option value="other">Otro</option>
                             </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Estado del Producto</label>
+                            <div class="status-selector">
+                                <div class="status-option" data-status="new">Nuevo</div>
+                                <div class="status-option" data-status="sold">Agotado</div>
+                                <div class="status-option" data-status="negotiation">En Negociación</div>
+                                <div class="status-option" data-status="offer">En Oferta</div>
+                            </div>
+                            <input type="hidden" id="perfumery-status" value="new">
+                        </div>
+                        
+                        <div class="form-group" id="perfumery-offer-price-group" style="display: none;">
+                            <label for="perfumery-offer-price">Precio de Oferta</label>
+                            <input type="number" id="perfumery-offer-price" step="0.01">
                         </div>
                         
                         <div class="form-group">
@@ -1853,9 +2121,14 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-btn" id="whatsappBtn">
+    <!-- Floating Buttons -->
+    <div class="floating-btn whatsapp" id="whatsappBtn">
         <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <div class="floating-btn cart" id="cartBtn">
+        <i class="fas fa-shopping-cart"></i>
+        <div class="cart-count" id="cartCount">0</div>
     </div>
 
     <!-- WhatsApp Modal -->
@@ -1920,9 +2193,84 @@
                     </div>
                     
                     <div class="product-modal-actions">
-                        <a href="tel:+5355703261" class="btn"><i class="fas fa-phone"></i> Llamar</a>
+                        <button class="btn" id="addToCartBtn"><i class="fas fa-cart-plus"></i> Añadir al Carrito</button>
                         <a href="https://wa.me/5355703261" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal edit-product-modal" id="editProductModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeEditProductModal">&times;</span>
+            <h2>Editar Producto</h2>
+            <form id="editProductForm">
+                <div class="form-group">
+                    <label>Estado del Producto</label>
+                    <div class="status-selector" id="edit-status-selector">
+                        <div class="status-option" data-status="new">Nuevo</div>
+                        <div class="status-option" data-status="sold">Agotado</div>
+                        <div class="status-option" data-status="negotiation">En Negociación</div>
+                        <div class="status-option" data-status="offer">En Oferta</div>
+                    </div>
+                    <input type="hidden" id="edit-status" value="new">
+                </div>
+                
+                <div class="form-group" id="edit-offer-price-group" style="display: none;">
+                    <label for="edit-offer-price">Precio de Oferta</label>
+                    <input type="number" id="edit-offer-price" step="0.01">
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-price">Precio</label>
+                    <input type="number" id="edit-price" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-description">Descripción</label>
+                    <textarea id="edit-description" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Método de Entrega</label>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <label><input type="checkbox" name="edit-delivery" value="domicilio"> Incluye Domicilio</label>
+                        <label><input type="checkbox" name="edit-delivery" value="extra"> Domicilio por Coste Extra</label>
+                        <label><input type="checkbox" name="edit-delivery" value="tienda"> Tienda Física</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Imágenes del Producto</label>
+                    <div class="image-preview" id="edit-image-preview"></div>
+                </div>
+                
+                <button type="submit" class="btn">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal cart-modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeCartModal">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here by JavaScript -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                
+                <div class="cart-buttons">
+                    <button class="btn" id="continueShoppingBtn">Seguir Comprando</button>
+                    <button class="btn btn-secondary" id="checkoutBtn">Finalizar Compra</button>
                 </div>
             </div>
         </div>
@@ -1998,7 +2346,7 @@
 
     <script>
         // Datos de productos de ejemplo
-        const productsData = [
+        let productsData = [
             {
                 id: 1,
                 title: "Nevera Samsung 500L",
@@ -2014,6 +2362,8 @@
                 rating: 4.5,
                 stock: "Disponible",
                 delivery: "Incluye domicilio",
+                status: "new",
+                offerPrice: null,
                 images: [
                     "https://images.unsplash.com/photo-1591175782227-17fb9988154a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
                     "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
@@ -2025,7 +2375,8 @@
                     { name: "Color", value: "Plateado" },
                     { name: "Estado", value: "Excelente" }
                 ],
-                dateAdded: "2023-05-15"
+                dateAdded: "2023-05-15",
+                providerId: "provider1" // ID del proveedor dueño
             },
             {
                 id: 2,
@@ -2042,6 +2393,8 @@
                 rating: 4.8,
                 stock: "Últimas unidades",
                 delivery: "Domicilio por costo extra",
+                status: "offer",
+                offerPrice: 100,
                 images: [
                     "https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
                     "https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
@@ -2052,7 +2405,8 @@
                     { name: "Origen", value: "Francia" },
                     { name: "Estado", value: "Nuevo" }
                 ],
-                dateAdded: "2023-06-10"
+                dateAdded: "2023-06-10",
+                providerId: "provider2"
             },
             {
                 id: 3,
@@ -2069,6 +2423,8 @@
                 rating: 4.7,
                 stock: "Disponible",
                 delivery: "Tienda física",
+                status: "negotiation",
+                offerPrice: null,
                 images: [
                     "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 ],
@@ -2079,7 +2435,8 @@
                     { name: "Color", value: "Blanco" },
                     { name: "Estado", value: "Casi nueva" }
                 ],
-                dateAdded: "2023-06-20"
+                dateAdded: "2023-06-20",
+                providerId: "provider1"
             },
             {
                 id: 4,
@@ -2096,6 +2453,8 @@
                 rating: 4.3,
                 stock: "Disponible",
                 delivery: "Tienda física",
+                status: "sold",
+                offerPrice: null,
                 images: [
                     "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 ],
@@ -2105,7 +2464,8 @@
                     { name: "Contenido", value: "Variado" },
                     { name: "Estado", value: "Buena calidad" }
                 ],
-                dateAdded: "2023-06-05"
+                dateAdded: "2023-06-05",
+                providerId: "provider3"
             },
             {
                 id: 5,
@@ -2122,6 +2482,8 @@
                 rating: 4.6,
                 stock: "Disponible",
                 delivery: "Incluye domicilio",
+                status: "new",
+                offerPrice: null,
                 images: [
                     "https://images.unsplash.com/photo-1615228939092-4c8ccc0f7b1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 ],
@@ -2131,7 +2493,8 @@
                     { name: "Tipo", value: "Colonia" },
                     { name: "Estado", value: "Nuevo" }
                 ],
-                dateAdded: "2023-06-15"
+                dateAdded: "2023-06-15",
+                providerId: "provider2"
             },
             {
                 id: 6,
@@ -2148,6 +2511,8 @@
                 rating: 4.9,
                 stock: "Últimas unidades",
                 delivery: "Incluye instalación",
+                status: "offer",
+                offerPrice: 1000,
                 images: [
                     "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 ],
@@ -2157,7 +2522,8 @@
                     { name: "Tipo", value: "Split Inverter" },
                     { name: "Estado", value: "Nuevo" }
                 ],
-                dateAdded: "2023-06-18"
+                dateAdded: "2023-06-18",
+                providerId: "provider1"
             },
             {
                 id: 7,
@@ -2174,6 +2540,8 @@
                 rating: 4.4,
                 stock: "Disponible",
                 delivery: "Domicilio por costo extra",
+                status: "new",
+                offerPrice: null,
                 images: [
                     "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 ],
@@ -2184,7 +2552,8 @@
                     { name: "Color", value: "Azul oscuro" },
                     { name: "Estado", value: "Excelente" }
                 ],
-                dateAdded: "2023-06-12"
+                dateAdded: "2023-06-12",
+                providerId: "provider3"
             },
             {
                 id: 8,
@@ -2201,6 +2570,8 @@
                 rating: 4.2,
                 stock: "Disponible",
                 delivery: "Tienda física",
+                status: "new",
+                offerPrice: null,
                 images: [
                     "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 ],
@@ -2210,9 +2581,21 @@
                     { name: "Tipo", value: "Detergente en polvo" },
                     { name: "Estado", value: "Nuevo" }
                 ],
-                dateAdded: "2023-06-08"
+                dateAdded: "2023-06-08",
+                providerId: "provider4"
             }
         ];
+
+        // Carrito de compras
+        let cart = [];
+        
+        // Proveedor actual (simulado)
+        const currentProvider = {
+            id: "provider1",
+            name: "ElectroCuba",
+            phone: "+53555123456",
+            email: "proveedor@ejemplo.com"
+        };
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -2261,6 +2644,41 @@
             productModal.classList.remove('active');
         });
         
+        // Edit Product Modal
+        const editProductModal = document.getElementById('editProductModal');
+        const closeEditProductModal = document.getElementById('closeEditProductModal');
+        
+        closeEditProductModal.addEventListener('click', () => {
+            editProductModal.classList.remove('active');
+        });
+        
+        // Cart Modal
+        const cartBtn = document.getElementById('cartBtn');
+        const cartModal = document.getElementById('cartModal');
+        const closeCartModal = document.getElementById('closeCartModal');
+        const continueShoppingBtn = document.getElementById('continueShoppingBtn');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        
+        cartBtn.addEventListener('click', () => {
+            updateCartModal();
+            cartModal.classList.add('active');
+        });
+        
+        closeCartModal.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+        });
+        
+        continueShoppingBtn.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+        });
+        
+        checkoutBtn.addEventListener('click', () => {
+            alert('Compra finalizada. Nos pondremos en contacto contigo para coordinar el pago y entrega.');
+            cart = [];
+            updateCartCount();
+            cartModal.classList.remove('active');
+        });
+        
         // Auth Modal
         const accountBtn = document.getElementById('accountBtn');
         const authModal = document.getElementById('authModal');
@@ -2296,6 +2714,12 @@
             }
             if (e.target === productModal) {
                 productModal.classList.remove('active');
+            }
+            if (e.target === editProductModal) {
+                editProductModal.classList.remove('active');
+            }
+            if (e.target === cartModal) {
+                cartModal.classList.remove('active');
             }
             if (e.target === authModal) {
                 authModal.classList.remove('active');
@@ -2339,6 +2763,45 @@
                 }
             });
         });
+
+        // Status selector
+        function setupStatusSelector(selectorId, hiddenInputId, offerPriceGroupId) {
+            const selector = document.querySelectorAll(`#${selectorId} .status-option`);
+            const hiddenInput = document.getElementById(hiddenInputId);
+            const offerPriceGroup = document.getElementById(offerPriceGroupId);
+            
+            selector.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove active class from all options
+                    selector.forEach(opt => opt.classList.remove('active'));
+                    
+                    // Add active class to clicked option
+                    option.classList.add('active');
+                    
+                    // Update hidden input value
+                    hiddenInput.value = option.dataset.status;
+                    
+                    // Show/hide offer price field
+                    if (option.dataset.status === 'offer') {
+                        offerPriceGroup.style.display = 'block';
+                    } else {
+                        offerPriceGroup.style.display = 'none';
+                    }
+                    
+                    // Add specific class based on status
+                    option.classList.add(`status-${option.dataset.status}`);
+                });
+            });
+            
+            // Activate first option by default
+            if (selector.length > 0) {
+                selector[0].click();
+            }
+        }
+        
+        setupStatusSelector('electronicsForm .status-selector', 'electronics-status', 'electronics-offer-price-group');
+        setupStatusSelector('perfumeryForm .status-selector', 'perfumery-status', 'perfumery-offer-price-group');
+        setupStatusSelector('edit-status-selector', 'edit-status', 'edit-offer-price-group');
 
         // Image upload functionality
         function setupImageUpload(uploadElementId, fileInputId, previewElementId) {
@@ -2417,16 +2880,118 @@
         // Form submission
         document.getElementById('electronicsForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Producto enviado para aprobación. Nos pondremos en contacto contigo pronto.');
+            
+            // Create new product object
+            const newProduct = {
+                id: productsData.length + 1,
+                title: document.getElementById('electronics-name').value,
+                category: "electronics",
+                subcategory: document.getElementById('electronics-publish-type').value,
+                description: document.getElementById('electronics-description').value,
+                price: parseFloat(document.getElementById('electronics-price').value),
+                currency: document.querySelector('input[name="electronics-currency"]:checked').value,
+                exchangeRate: document.getElementById('electronics-exchange-rate').value || null,
+                vendor: document.getElementById('electronics-provider-name').value,
+                phone: document.getElementById('electronics-provider-phone').value,
+                location: document.getElementById('electronics-provider-address').value,
+                rating: 0,
+                stock: "Disponible",
+                delivery: Array.from(document.querySelectorAll('input[name="electronics-delivery"]:checked')).map(cb => cb.value).join(", "),
+                status: document.getElementById('electronics-status').value,
+                offerPrice: document.getElementById('electronics-offer-price').value ? parseFloat(document.getElementById('electronics-offer-price').value) : null,
+                images: [], // In a real app, you would upload these to a server
+                specs: [
+                    { name: "Marca", value: document.getElementById('electronics-brand').value },
+                    { name: "Modelo", value: document.getElementById('electronics-model').value },
+                    { name: "Tipo", value: document.getElementById('electronics-publish-type').options[document.getElementById('electronics-publish-type').selectedIndex].text }
+                ],
+                dateAdded: new Date().toISOString().split('T')[0],
+                providerId: currentProvider.id
+            };
+            
+            // Add to products array
+            productsData.unshift(newProduct);
+            
+            // Reset form
             this.reset();
             document.getElementById('electronics-image-preview').innerHTML = '';
+            
+            // Update products display
+            filterProducts();
+            
+            // Show success message
+            alert('Producto publicado exitosamente. Aparecerá en el catálogo una vez sea aprobado por nuestro equipo.');
         });
 
         document.getElementById('perfumeryForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Producto enviado para aprobación. Nos pondremos en contacto contigo pronto.');
+            
+            // Create new product object
+            const newProduct = {
+                id: productsData.length + 1,
+                title: document.getElementById('perfumery-name').value,
+                category: "perfumery",
+                subcategory: document.getElementById('perfumery-publish-type').value,
+                description: document.getElementById('perfumery-description').value,
+                price: parseFloat(document.getElementById('perfumery-price').value),
+                currency: document.querySelector('input[name="perfumery-currency"]:checked').value,
+                exchangeRate: document.getElementById('perfumery-exchange-rate').value || null,
+                vendor: document.getElementById('perfumery-provider-name').value,
+                phone: document.getElementById('perfumery-provider-phone').value,
+                location: document.getElementById('perfumery-provider-address').value,
+                rating: 0,
+                stock: "Disponible",
+                delivery: Array.from(document.querySelectorAll('input[name="perfumery-delivery"]:checked')).map(cb => cb.value).join(", "),
+                status: document.getElementById('perfumery-status').value,
+                offerPrice: document.getElementById('perfumery-offer-price').value ? parseFloat(document.getElementById('perfumery-offer-price').value) : null,
+                images: [], // In a real app, you would upload these to a server
+                specs: [
+                    { name: "Marca", value: document.getElementById('perfumery-brand').value },
+                    { name: "Tamaño", value: document.getElementById('perfumery-size').value },
+                    { name: "Origen", value: document.getElementById('perfumery-origin').value || "No especificado" },
+                    { name: "Tipo", value: document.getElementById('perfumery-publish-type').options[document.getElementById('perfumery-publish-type').selectedIndex].text }
+                ],
+                dateAdded: new Date().toISOString().split('T')[0],
+                providerId: currentProvider.id
+            };
+            
+            // Add to products array
+            productsData.unshift(newProduct);
+            
+            // Reset form
             this.reset();
             document.getElementById('perfumery-image-preview').innerHTML = '';
+            
+            // Update products display
+            filterProducts();
+            
+            // Show success message
+            alert('Producto publicado exitosamente. Aparecerá en el catálogo una vez sea aprobado por nuestro equipo.');
+        });
+
+        // Edit product form submission
+        document.getElementById('editProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const productId = parseInt(this.dataset.productId);
+            const productIndex = productsData.findIndex(p => p.id === productId);
+            
+            if (productIndex !== -1) {
+                // Update product data
+                productsData[productIndex].price = parseFloat(document.getElementById('edit-price').value);
+                productsData[productIndex].description = document.getElementById('edit-description').value;
+                productsData[productIndex].status = document.getElementById('edit-status').value;
+                productsData[productIndex].offerPrice = document.getElementById('edit-offer-price').value ? parseFloat(document.getElementById('edit-offer-price').value) : null;
+                productsData[productIndex].delivery = Array.from(document.querySelectorAll('input[name="edit-delivery"]:checked')).map(cb => cb.value).join(", ");
+                
+                // Update products display
+                filterProducts();
+                
+                // Close modal
+                editProductModal.classList.remove('active');
+                
+                // Show success message
+                alert('Producto actualizado exitosamente.');
+            }
         });
 
         // Login/Signup form submission
@@ -2494,24 +3059,44 @@
                 
                 // Format price
                 let priceText;
+                let priceValue = product.offerPrice && product.status === 'offer' ? product.offerPrice : product.price;
+                
                 if (product.currency === 'USD') {
-                    priceText = `$${product.price} USD`;
+                    priceText = `$${priceValue} USD`;
                     if (product.exchangeRate) {
-                        priceText += ` (${product.price * product.exchangeRate} CUP)`;
+                        priceText += ` (${priceValue * product.exchangeRate} CUP)`;
                     }
                 } else {
-                    priceText = `${product.price} CUP`;
+                    priceText = `${priceValue} CUP`;
+                }
+                
+                // Add original price if on offer
+                let originalPriceHtml = '';
+                if (product.offerPrice && product.status === 'offer') {
+                    originalPriceHtml = `<span class="original-price">$${product.price} USD</span>`;
+                }
+                
+                // Determine badge based on status
+                let badgeHtml = '';
+                if (product.status === 'new') {
+                    badgeHtml = `<div class="product-badge badge-new">Nuevo</div>`;
+                } else if (product.status === 'sold') {
+                    badgeHtml = `<div class="product-badge badge-sold">Agotado</div>`;
+                } else if (product.status === 'negotiation') {
+                    badgeHtml = `<div class="product-badge badge-negotiation">En Negociación</div>`;
+                } else if (product.status === 'offer') {
+                    badgeHtml = `<div class="product-badge badge-offer">En Oferta</div>`;
                 }
                 
                 productCard.innerHTML = `
                     <div class="product-img">
                         <img src="${product.images[0]}" alt="${product.title}">
-                        <div class="product-badge">Nuevo</div>
+                        ${badgeHtml}
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">${product.title}</h3>
                         <p class="product-vendor">${product.vendor}</p>
-                        <p class="product-price">${priceText}</p>
+                        <p class="product-price">${originalPriceHtml}${priceText}</p>
                         <div class="product-meta">
                             <span><i class="fas fa-map-marker-alt"></i> ${product.location}</span>
                             <span class="product-rating"><i class="fas fa-star"></i> ${product.rating}</span>
@@ -2523,6 +3108,21 @@
                     openProductModal(product);
                 });
                 
+                // Add edit button if current user is the provider
+                if (product.providerId === currentProvider.id) {
+                    const editBtn = document.createElement('button');
+                    editBtn.className = 'btn btn-small';
+                    editBtn.style.marginTop = '10px';
+                    editBtn.style.width = '100%';
+                    editBtn.innerHTML = '<i class="fas fa-edit"></i> Editar';
+                    editBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openEditProductModal(product);
+                    });
+                    
+                    productCard.querySelector('.product-info').appendChild(editBtn);
+                }
+                
                 container.appendChild(productCard);
             });
         }
@@ -2530,18 +3130,25 @@
         function openProductModal(product) {
             // Format price
             let priceText;
+            let priceValue = product.offerPrice && product.status === 'offer' ? product.offerPrice : product.price;
+            
             if (product.currency === 'USD') {
-                priceText = `$${product.price} USD`;
+                priceText = `$${priceValue} USD`;
                 if (product.exchangeRate) {
-                    priceText += ` (≈${product.price * product.exchangeRate} CUP)`;
+                    priceText += ` (≈${priceValue * product.exchangeRate} CUP)`;
                 }
             } else {
-                priceText = `${product.price} CUP`;
+                priceText = `${priceValue} CUP`;
+            }
+            
+            // Add original price if on offer
+            if (product.offerPrice && product.status === 'offer') {
+                priceText = `<span class="original-price">$${product.price} USD</span> ${priceText}`;
             }
             
             // Set main product info
             document.getElementById('product-modal-title').textContent = product.title;
-            document.getElementById('product-modal-price').textContent = priceText;
+            document.getElementById('product-modal-price').innerHTML = priceText;
             document.getElementById('product-modal-vendor-name').textContent = product.vendor;
             document.getElementById('product-modal-rating').textContent = product.rating;
             document.getElementById('product-modal-location').textContent = product.location;
@@ -2580,8 +3187,208 @@
                 thumbnailsContainer.appendChild(thumbnail);
             });
             
+            // Set up add to cart button
+            const addToCartBtn = document.getElementById('addToCartBtn');
+            addToCartBtn.onclick = () => {
+                addToCart(product);
+                productModal.classList.remove('active');
+            };
+            
+            // Disable add to cart if product is sold or in negotiation
+            if (product.status === 'sold' || product.status === 'negotiation') {
+                addToCartBtn.disabled = true;
+                addToCartBtn.innerHTML = '<i class="fas fa-ban"></i> No disponible';
+            } else {
+                addToCartBtn.disabled = false;
+                addToCartBtn.innerHTML = '<i class="fas fa-cart-plus"></i> Añadir al Carrito';
+            }
+            
             // Open modal
             productModal.classList.add('active');
+        }
+
+        function openEditProductModal(product) {
+            // Set product ID on form
+            document.getElementById('editProductForm').dataset.productId = product.id;
+            
+            // Set current values
+            document.getElementById('edit-price').value = product.price;
+            document.getElementById('edit-description').value = product.description;
+            
+            // Set status
+            const statusOptions = document.querySelectorAll('#edit-status-selector .status-option');
+            statusOptions.forEach(option => {
+                if (option.dataset.status === product.status) {
+                    option.click();
+                }
+            });
+            
+            // Set offer price if applicable
+            if (product.offerPrice && product.status === 'offer') {
+                document.getElementById('edit-offer-price').value = product.offerPrice;
+            }
+            
+            // Set delivery methods
+            const deliveryMethods = product.delivery.split(", ");
+            document.querySelectorAll('input[name="edit-delivery"]').forEach(checkbox => {
+                checkbox.checked = deliveryMethods.includes(checkbox.value);
+            });
+            
+            // Set images preview
+            const previewContainer = document.getElementById('edit-image-preview');
+            previewContainer.innerHTML = '';
+            
+            product.images.forEach(img => {
+                const previewItem = document.createElement('div');
+                previewItem.className = 'image-preview-item';
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = img;
+                
+                previewItem.appendChild(imgElement);
+                previewContainer.appendChild(previewItem);
+            });
+            
+            // Open modal
+            editProductModal.classList.add('active');
+        }
+
+        // Cart functionality
+        function addToCart(product) {
+            // Check if product is already in cart
+            const existingItem = cart.find(item => item.product.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    product: product,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            showCartNotification('Producto añadido al carrito');
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        function showCartNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '100px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#4CAF50';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1000';
+            notification.style.transition = 'all 0.3s ease';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 2000);
+        }
+
+        function updateCartModal() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartTotalElement = document.getElementById('cartTotal');
+            
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Tu carrito está vacío</p>';
+                cartTotalElement.textContent = '$0.00';
+                return;
+            }
+            
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                
+                // Calculate item total
+                const price = item.product.offerPrice && item.product.status === 'offer' ? item.product.offerPrice : item.product.price;
+                const itemTotal = price * item.quantity;
+                total += itemTotal;
+                
+                // Format price
+                let priceText;
+                if (item.product.currency === 'USD') {
+                    priceText = `$${price} USD`;
+                    if (item.product.exchangeRate) {
+                        priceText += ` (${price * item.product.exchangeRate} CUP)`;
+                    }
+                } else {
+                    priceText = `${price} CUP`;
+                }
+                
+                cartItemElement.innerHTML = `
+                    <div class="cart-item-img">
+                        <img src="${item.product.images[0]}" alt="${item.product.title}">
+                    </div>
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.product.title}</div>
+                        <div class="cart-item-vendor">${item.product.vendor}</div>
+                        <div class="cart-item-price">${priceText} x ${item.quantity} = $${itemTotal} ${item.product.currency}</div>
+                        <div class="cart-item-actions">
+                            <div class="cart-item-quantity">
+                                <button class="decrease-quantity" data-index="${index}">-</button>
+                                <input type="text" value="${item.quantity}" readonly>
+                                <button class="increase-quantity" data-index="${index}">+</button>
+                            </div>
+                            <div class="remove-item" data-index="${index}"><i class="fas fa-trash"></i></div>
+                        </div>
+                    </div>
+                `;
+                
+                cartItemsContainer.appendChild(cartItemElement);
+            });
+            
+            // Format total
+            const currency = cart[0].product.currency; // Assuming all items have same currency
+            cartTotalElement.textContent = `$${total.toFixed(2)} ${currency}`;
+            
+            // Add event listeners for quantity buttons
+            document.querySelectorAll('.decrease-quantity').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.dataset.index);
+                    if (cart[index].quantity > 1) {
+                        cart[index].quantity -= 1;
+                        updateCartModal();
+                        updateCartCount();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.increase-quantity').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.dataset.index);
+                    cart[index].quantity += 1;
+                    updateCartModal();
+                    updateCartCount();
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.dataset.index || e.target.parentElement.dataset.index);
+                    cart.splice(index, 1);
+                    updateCartModal();
+                    updateCartCount();
+                });
+            });
         }
 
         // Filter products
